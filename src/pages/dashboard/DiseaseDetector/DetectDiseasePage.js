@@ -1,12 +1,24 @@
 import { Grid } from '@mui/material';
 import MainCard from 'components/MainCard';
+import { Button } from 'antd';
 // import { useState } from 'react';
-import AssetTable from './MaintenanceTable.js';
+import DetectDiseaseFile from './DetectDiseaseFile';
 
-// avatar style
-const MaintenancePage = () => {
+
+const DetectDiseasePage = () => {
+//   const [open, setOpen] = useState(false);
+//   const showDrawer = () => {
+//     setOpen(true);
+//   };
+
+//   const onClose = () => {
+//     setOpen(false);
+//   };
+
   return (
     <>
+  
+
       <Grid container rowSpacing={4.5} columnSpacing={2.75}>
         <Grid item md={8} sx={{ display: { sm: 'none', md: 'block', lg: 'none' } }} />
 
@@ -15,7 +27,12 @@ const MaintenancePage = () => {
             <Grid item />
           </Grid>
           <MainCard sx={{ mt: 2 }} content={false}>
-            <AssetTable />
+            <div style={{ margin: '10px' }}>
+              <Button type="primary" ghost >
+                New Research
+              </Button>
+            </div>
+            <DetectDiseaseFile />
           </MainCard>
         </Grid>
       </Grid>
@@ -23,4 +40,4 @@ const MaintenancePage = () => {
   );
 };
 
-export default MaintenancePage;
+export default DetectDiseasePage;

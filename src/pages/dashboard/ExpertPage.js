@@ -1,14 +1,13 @@
 import { Grid } from '@mui/material';
-import ItemsTable from './ItemsTable';
+import ExpertsTable from './ExpertsTable';
 
 import MainCard from 'components/MainCard';
 import { Button, Drawer, Space } from 'antd';
 import { useState } from 'react';
-import AddItem from './AddItem';
+import AddExpert from './AddExpert';
 
-// avatar style
 
-const ItemsPage = () => {
+const ExpertPage = () => {
   const [open, setOpen] = useState(false);
   const showDrawer = () => {
     setOpen(true);
@@ -21,7 +20,7 @@ const ItemsPage = () => {
   return (
     <>
       <Drawer
-        title="Add Item"
+        title="Add Expert"
         width={500}
         onClose={onClose}
         open={open}
@@ -32,7 +31,7 @@ const ItemsPage = () => {
           </Space>
         }
       >
-        <AddItem />
+        <AddExpert />
       </Drawer>
 
       <Grid container rowSpacing={4.5} columnSpacing={2.75}>
@@ -45,10 +44,10 @@ const ItemsPage = () => {
           <MainCard sx={{ mt: 2 }} content={false}>
             <div style={{ margin: '10px' }}>
               <Button type="primary" ghost onClick={() => showDrawer()}>
-                New Item
+                New Expert
               </Button>
             </div>
-            <ItemsTable />
+            <ExpertsTable />
           </MainCard>
         </Grid>
       </Grid>
@@ -56,4 +55,4 @@ const ItemsPage = () => {
   );
 };
 
-export default ItemsPage;
+export default ExpertPage;

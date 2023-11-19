@@ -1,5 +1,5 @@
 import { Grid, Typography } from '@mui/material';
-import OrdersTable from './OrdersTable';
+import OrdersTable from './ReportingTable';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import MainCard from 'components/MainCard';

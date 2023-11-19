@@ -9,7 +9,6 @@ import MainCard from 'components/MainCard';
 // assets
 import { RiseOutlined, FallOutlined } from '@ant-design/icons';
 
-// ==============================|| STATISTICS - ECOMMERCE CARD  ||============================== //
 
 const AnalyticEcommerce = ({ color, title, count, percentage, isLoss, extra }) => (
   <MainCard contentSX={{ p: 2.25 }}>
@@ -44,7 +43,7 @@ const AnalyticEcommerce = ({ color, title, count, percentage, isLoss, extra }) =
     </Stack>
     <Box sx={{ pt: 2.25 }}>
       <Typography variant="caption" color="textSecondary">
-        You made..
+        Artmospheric &&&..
         <Typography component="span" variant="caption" sx={{ color: `${color || 'primary'}.main` }}>
           {extra}
         </Typography>{' '}

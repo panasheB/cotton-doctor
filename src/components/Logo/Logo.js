@@ -1,6 +1,6 @@
 // material-ui
 // import { useTheme } from '@mui/material/styles';
-import avatar1 from 'assets/images/users/logo3.jpg';
+import avatar1 from 'assets/images/users/final.jpg';
 
 
 

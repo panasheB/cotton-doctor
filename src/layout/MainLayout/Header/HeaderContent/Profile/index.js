@@ -26,7 +26,7 @@ import ProfileTab from './ProfileTab';
 import SettingTab from './SettingTab';
 
 // assets
-import avatar1 from 'assets/images/users/logo3.jpg';
+import avatar1 from 'assets/images/users/final.jpg';
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 
 // tab panel wrapper
@@ -51,7 +51,6 @@ function a11yProps(index) {
   };
 }
 
-// ==============================|| HEADER CONTENT - PROFILE ||============================== //
 
 const Profile = () => {
   const theme = useTheme();
@@ -98,7 +97,7 @@ const Profile = () => {
       >
         <Stack direction="row" spacing={2} alignItems="center" sx={{ p: 0.5 }}>
           <Avatar alt="profile user" src={avatar1} sx={{ width: 32, height: 32 }} />
-          <Typography variant="subtitle1">Inventory Manager</Typography>
+          <Typography variant="subtitle1">Cotton Doctor</Typography>
         </Stack>
       </ButtonBase>
       <Popper
@@ -141,9 +140,9 @@ const Profile = () => {
                           <Stack direction="row" spacing={1.25} alignItems="center">
                             <Avatar alt="profile user" src={avatar1} sx={{ width: 32, height: 32 }} />
                             <Stack>
-                              <Typography variant="h6">Admin i</Typography>
+                              <Typography variant="h6">Farmer One</Typography>
                               <Typography variant="body2" color="textSecondary">
-                                Adminstrator
+                                Farmer
                               </Typography>
                             </Stack>
                           </Stack>

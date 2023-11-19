@@ -5,11 +5,14 @@ import {
   PayCircleOutlined,
   LoadingOutlined,
   DollarOutlined,
-  AppstoreAddOutlined
+  AppstoreAddOutlined,
+  UserOutlined
 } from '@ant-design/icons';
+
 
 // icons
 const icons = {
+  UserOutlined,
   DollarOutlined,
   PayCircleOutlined,
   BgColorsOutlined,
@@ -23,58 +26,37 @@ const utilities = {
   title: 'Tools',
   type: 'group',
   children: [
+ 
+
     {
-      id: 'util-typography',
-      title: 'Transactions',
+      id: 'util-item',
+      title: 'Experts',
       type: 'item',
-      url: '/transactions',
-      icon: icons.DollarOutlined
+      url: '/experts',
+      icon: icons.UserOutlined
     },
 
     {
-      id: 'util-items',
-      title: 'Items',
+      id: 'util-detect',
+      title: 'Disease Detector',
       type: 'item',
-      url: '/items',
-      icon: icons.AppstoreAddOutlined
+      url: '/detect',
+      icon: icons.BgColorsOutlined
     },
 
     {
-      id: 'util-transaction',
-      title: 'Reporting',
+      id: 'util-assist',
+      title: 'Assistant',
       type: 'item',
-      url: '/reporting',
-      icon: icons.PayCircleOutlined
+      url: '/chatbot',
+      icon: icons.BgColorsOutlined
     },
 
-    {
-      id: 'util-assets',
-      title: 'Assets',
-      type: 'item',
-      url: '/assets',
-      icon: icons.PayCircleOutlined
-    },
-    {
-      id: 'util-categories',
-      title: 'Categories',
-      type: 'item',
-      url: '/categories',
-      icon: icons.PayCircleOutlined
-    },
-    {
-      id: 'util-maintenance',
-      title: 'Maintenance',
-      type: 'item',
-      url: '/maintenance',
-      icon: icons.PayCircleOutlined
-    },
-    {
-      id: 'util-expense',
-      title: 'Expense',
-      type: 'item',
-      url: '/expense',
-      icon: icons.PayCircleOutlined
-    }
+
+    
+
+    
+  
   ]
 };
 
