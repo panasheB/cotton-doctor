@@ -52,6 +52,14 @@ const utilities = {
       icon: icons.BgColorsOutlined
     },
 
+    {
+      id: 'util-news',
+      title: 'News and Alerts',
+      type: 'item',
+      url: '/news',
+      icon: icons.BgColorsOutlined
+    },
+
 
     
 

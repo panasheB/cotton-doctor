@@ -41,7 +41,7 @@ function AddExpert() {
   const sessionSuccess = () => {
     swal({
       title: 'Successful!',
-      text: 'Expert Added!',
+      text: 'Expert Added Successfully!',
       icon: 'success'
     });
   };
@@ -54,9 +54,9 @@ function AddExpert() {
     });
   };
 
+  //handle submit function
   function handleSubmit() {
     const data = {
-
       id: expert.id,
       firstName: expert.firstName,
       lastName: expert.lastName,
@@ -80,6 +80,8 @@ function AddExpert() {
       });
   }
 
+
+  //container style
   const containerStyle = {
     border: '0.5px solid lightgrey',
     padding: '10px'

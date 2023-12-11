@@ -90,7 +90,7 @@ const Reporting = () => {
   };
 
   function handleSubmit() {
-    setIsLoading(true); // Set loading state to true
+    setIsLoading(true); 
 
     axios
       .post(

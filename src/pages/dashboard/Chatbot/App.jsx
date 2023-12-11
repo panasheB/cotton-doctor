@@ -25,17 +25,18 @@ function App() {
       sender: "user"
     };
 
-    const newMessages = [...messages, newMessage];
     
+
+    const newMessages = [...messages, newMessage];
     setMessages(newMessages);
     // Initial system message to determine CottonAssistant functionality
     setIsTyping(true);
     await processMessageToChatGPT(newMessages);
   };
 
-  async function processMessageToChatGPT(chatMessages) { // messages is an array of messages
- 
 
+
+  async function processMessageToChatGPT(chatMessages) { // messages is an array of messages
     let apiMessages = chatMessages.map((messageObject) => {
       let role = "";
       if (messageObject.sender === "ChatGPT") {

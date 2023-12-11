@@ -26,25 +26,12 @@ const DashboardDefault = () => {
   //sales
   const monthlySales = reports?.sales_today_week_month?.month || 0; //number
   const dailySales = reports?.sales_today_week_month?.today || 0; //number
-
-  // //profits
-  const totalSales = reports?.weekly_sales_profit?.total_sales || 0; //number
   const totalProfit = reports?.weekly_sales_profit?.total_profit || 0; //number
-
-  // //inventory
   const items = reports?.items || 0; //number
   const quantiityInStock = reports?.item_quantities?.['0']?.quantity || 0; //number
-
-  // //stock
-  // const lowStock = reports?.low_stock//aray
-
-  // //quantities
-  // const profitMargin = reports?.profit_margin//array//
   const formattedMonthly = `${monthlySales} ...`;
   const formattedDaily = `${dailySales} ...`;
-  const formattedItesm = `${items} ...`;
   const kgs = `${quantiityInStock} ...`;
-  const formattedWeekly = `${totalSales} ...`;
   const formattedTotalProfit = `$$  ${totalProfit} ...`;
 
   return (
@@ -55,15 +42,15 @@ const DashboardDefault = () => {
           <Typography variant="h5">Cotton Doctor</Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={3}>
-          <AnalyticEcommerce title="Temperature" count="000" percentage={formattedMonthly} extra={formattedDaily} />
+          <AnalyticEcommerce title="Temperature" count="27/18 (°C)" percentage={formattedMonthly} extra={formattedDaily} />
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={3}>
-          <AnalyticEcommerce title="Wind Speed" count={items} percentage={formattedItesm} extra={items} />
+      <AnalyticEcommerce title="Wind Speed" count="200(m/s)" percentage="5000 lux" extra={items} />
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={3}>
           <AnalyticEcommerce
-            title="Radiation"
-            count={formattedWeekly}
+            title="Rainfall"
+            count="105(mm)"
             percentage={formattedTotalProfit}
             isLoss
             color="warning"
@@ -71,7 +58,7 @@ const DashboardDefault = () => {
           />
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={3}>
-          <AnalyticEcommerce title="Humudity Level" count={quantiityInStock} percentage={kgs} isLoss extra={quantiityInStock} />
+          <AnalyticEcommerce title="Humudity Level" count="60%" percentage={kgs} isLoss extra={quantiityInStock} />
         </Grid>
 
         <Grid item md={8} sx={{ display: { sm: 'none', md: 'block', lg: 'none' } }} />

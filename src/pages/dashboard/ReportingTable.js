@@ -1,10 +1,19 @@
-import { Table } from 'antd';
+import { Table,Button } from 'antd';
 import { Box, TableContainer } from '@mui/material';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function ReportingTable() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([
+    {
+     
+      temperature: '27/18 (°C)',
+      wind: '200(m/s)',
+      rainfall: '105(mm)',
+      humidity: "60%",
+      light: '5000 lux',
+    }
+  ]);
   useEffect(() => {
     axios
       .get('path')
@@ -26,8 +35,8 @@ export default function ReportingTable() {
     },
     {
       title: 'Wind Speed',
-      dataIndex: 'speed',
-      key: 'speed'
+      dataIndex: 'wind',
+      key: 'wind'
     },
     {
       title: 'Rainfall',
@@ -37,15 +46,27 @@ export default function ReportingTable() {
 
     {
       title: 'Humudity',
-      dataIndex: 'humudity',
-      key: 'humudity'
+      dataIndex: 'humidity',
+      key: 'humidity'
     },
 
     {
-      title: 'Leaf Wetness',
-      dataIndex: 'leaf',
-      key: 'leaf'
+      title: 'Light Intensity',
+      dataIndex: 'light',
+      key: 'light'
     },
+
+    {
+      title: 'Action',
+      key: 'action',
+      render: () => (
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <Button  type="primary" ghost>
+            Get Recommendations
+          </Button>
+        </div>
+      )
+    }
  
   ];
 

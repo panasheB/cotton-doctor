@@ -1,13 +1,27 @@
-import { Table } from 'antd';
+import { Table, Input, Col, Row } from 'antd';
 import { Box, TableContainer } from '@mui/material';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Watermark } from 'antd';
+import { Watermark, Button, Drawer, Space, DatePicker } from 'antd';
 import avatar1 from 'assets/images/users/final.jpg';
+import ContactExpert from './ContactExpert';
+import { Search } from '@material-ui/icons';
+const { RangePicker } = DatePicker;
+
+
+
 
 export default function ExpertsTable() {
   const [location, setLocation] = useState(null);
   const [address, setAddress] = useState(null);
+  const [open, setOpen] = useState(false);
+  const showDrawer = () => {
+    setOpen(true);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
 
   useEffect(() => {
     // Check if the Geolocation API is available in the browser
@@ -36,27 +50,27 @@ export default function ExpertsTable() {
     } else {
       console.error('Geolocation is not supported in this browser.');
     }
-  }, []); 
+  }, []);
 
   const [experts, setExperts] = useState([
     {
       id: 1,
-      firstName: 'John',
-      lastName: 'Doe',
-      expertise: 'Cotton Farming',
+      firstName: 'Panashe',
+      lastName: 'Budzinike',
+      expertise: 'Disease',
       experienceYears: 10,
-      contactEmail: 'john.doe@example.com',
-      contactPhone: '+1 (555) 123-4567',
-      locationCity: 'Anytown',
-      locationState: 'CA',
-      locationCountry: 'USA'
+      contactEmail: 'pana@gmail.com',
+      contactPhone: '+263786398208',
+      locationCity: 'Centenary',
+      locationState: 'Muzarabani',
+      locationCountry: 'Zimbabwe'
     },
 
     {
       id: 2,
       firstName: 'Nyasha',
-      lastName: 'CHaingeni',
-      expertise: 'Cotton Farming',
+      lastName: 'Chaingeni',
+      expertise: 'Pests',
       experienceYears: 9,
       contactEmail: 'nyashachaingeni@gmail.com',
       contactPhone: '00000000000',
@@ -69,7 +83,7 @@ export default function ExpertsTable() {
       id: 3,
       firstName: 'Panashe',
       lastName: 'Sunlight',
-      expertise: 'Cotton Farming',
+      expertise: 'Disease',
       experienceYears: 11,
       contactEmail: 'panashebudzinike@gmail.com.com',
       contactPhone: '0786398208',
@@ -139,12 +153,38 @@ export default function ExpertsTable() {
       title: 'Country',
       dataIndex: 'locationCountry',
       key: 'locationCountry'
+    },
+
+    {
+      title: 'Action',
+      key: 'action',
+      render: () => (
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <Button onClick={showDrawer} type="primary" ghost>
+            Contact
+          </Button>
+        </div>
+      )
     }
   ];
 
-
   return (
     <>
+      <Drawer
+        title="Contact"
+        width={500}
+        style={{ top: '15%' }}
+        onClose={onClose}
+        open={open}
+        extra={
+          <Space>
+            <Button>Cancel</Button>
+            <Button type="primary">OK</Button>
+          </Space>
+        }
+      >
+        <ContactExpert />
+      </Drawer>
       <div style={{ marginLeft: '10px' }}>
         <h2>Current Location</h2>
         {location ? (
@@ -157,6 +197,22 @@ export default function ExpertsTable() {
         ) : (
           <p>Loading location...</p>
         )}
+      </div>
+      <div>
+        <div style={{ marginBottom: '30px',marginLeft:'5px' }}>
+          <Row gutter={[16, 16]}>
+            <Col span={12}>
+              <Input placeholder="Search expert here" prefix={<Search />} onChange={(e) => handleSearch(e.target.value)} />
+            </Col>
+
+            <Col span={12}>
+              <div style={{ marginTop: '1px' }}> 
+              <RangePicker  />
+              </div>
+             
+            </Col>
+          </Row>
+        </div>
       </div>
       <Box>
         <Watermark>
